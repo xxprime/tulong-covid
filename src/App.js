@@ -1,114 +1,12 @@
 import React from "react";
 
 import MainLayout from "./modules/MainLayout";
+import ProjectList from "./modules/ProjectList";
 
 function App() {
   return (
     <MainLayout>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
-      <div>CONTENT</div>
+      <ProjectList />
     </MainLayout>
   );
 }
