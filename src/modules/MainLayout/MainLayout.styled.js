@@ -15,7 +15,7 @@ export const Logo = styled.div`
   float: left;
 `;
 
-export const HeadingTitle = styled.h1`
+export const HeadingTitle = styled.h2`
   font-family: Arial, Helvetica, sans-serif;
 `;
 
