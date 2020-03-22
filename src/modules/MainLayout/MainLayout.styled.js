@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Menu as antMenu, Layout as antLayout } from "antd";
 
-const { Header: antHeader } = antLayout;
+const { Header: antHeader, Footer: antFooter } = antLayout;
 
 export const Header = styled(antHeader)`
   background: #fff;
@@ -23,6 +23,11 @@ export const Menu = styled(antMenu)`
   position: absolute;
   left: 70%;
   top: 0%;
+  line-height: 64px;
+`;
+
+export const Footer = styled(antFooter)`
+  text-align: center;
 `;
 
 Menu.Item = antMenu.Item;
