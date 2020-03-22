@@ -4,7 +4,7 @@ import { Layout } from "antd";
 const { Content: antContent } = Layout;
 
 export const Content = styled(antContent)`
-  padding: 50px 50px 0px 50px;
+  padding: 25px 50px 0px 50px;
 `;
 
 export const Wrapper = styled.div`
