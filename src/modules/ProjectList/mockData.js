@@ -8,6 +8,7 @@ const cards = [
       "The primary goal is for it to be a good source of important information for communities. The secondary goal is to connect users amongst questions and needs that government services currently does not account for, such as volunteer-based child care (in a safe way) as well as grocery delivery for elderly.",
     ],
     typeTags: ["Software", "Programming", "Open Source"],
+    locations: ["Manila"],
   },
   {
     title:
@@ -19,6 +20,7 @@ const cards = [
       "The proposed project is an app that can be installed and used on any smartphone and laptop to detect early symptoms of COVID-19 remotely without leaving the home. It uses the detection of breathing characteristics via technological devices accessible to everybody at home with cameras of smartphones/laptop and machine learning, and combines it with the detection of symptoms of breathing characteristics. The app could also include mindfulness and meditation exercises to help people reduce stress and anxiety. And resources to reach for the nearest hospital, doctor and pharmacy. As well as resources for communal support and connection to nearest online groups, help for grocery delivery etc.",
     ],
     typeTags: ["Track the outbreak", "Reduce spread", "Scale Testing"],
+    locations: ["Quezon"],
   },
 ];
 

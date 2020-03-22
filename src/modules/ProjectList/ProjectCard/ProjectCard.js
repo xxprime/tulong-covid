@@ -1,42 +1,12 @@
 import React from "react";
+import styled from "@emotion/styled";
 import "./index.css";
-import { PageHeader, Button, Tag, Typography, Row } from "antd";
+import { PageHeader, Tag, Typography, Row } from "antd";
+import { EnvironmentFilled } from "@ant-design/icons";
 
 import { Card } from "./ProjectCard.styled";
 
 const { Paragraph } = Typography;
-
-const routes = [
-  {
-    path: "index",
-    breadcrumbName: "First-level Menu",
-  },
-  {
-    path: "first",
-    breadcrumbName: "Second-level Menu",
-  },
-  {
-    path: "second",
-    breadcrumbName: "Third-level Menu",
-  },
-];
-
-const IconLink = ({ src, text }) => (
-  <a
-    style={{
-      marginRight: 16,
-    }}
-  >
-    <img
-      style={{
-        marginRight: 8,
-      }}
-      src={src}
-      alt={text}
-    />
-    {text}
-  </a>
-);
 
 const ProjectDescription = ({ description }) => (
   <div>
@@ -46,57 +16,63 @@ const ProjectDescription = ({ description }) => (
   </div>
 );
 
-const ProjectTypeTags = ({ typeTags }) => (
+const ProjectHelpTags = ({ helpTags }) => (
   <div>
-    {typeTags.map(typeTag => (
-      <Tag color="red">{typeTag}</Tag>
+    {helpTags.map(helpTag => (
+      <Tag color="blue">{helpTag}</Tag>
     ))}
   </div>
 );
 
-const Content = ({ children, extraContent }) => {
-  return (
-    <Row>
-      <div style={{ flex: 1 }}>{children}</div>
-      <div className="image">{extraContent}</div>
-    </Row>
-  );
-};
+const ProjectTypeTags = ({ typeTags }) => (
+  <Wrapper>
+    {typeTags.map(typeTag => (
+      <Tag color="red">{typeTag}</Tag>
+    ))}
+  </Wrapper>
+);
 
-const ProjectCard = ({ title, helpTags, description, typeTags }) => (
+const ProjectLocationTags = ({ locations }) => (
+  <div>
+    <EnvironmentFilled />
+    <LocationWrapper>
+      {locations.map(location => (
+        <Tag color="red">{location}</Tag>
+      ))}
+    </LocationWrapper>
+  </div>
+);
+
+const Wrapper = styled.div`
+  padding-left: 30px;
+  margin-bottom: 20px;
+`;
+
+const LocationWrapper = styled.div`
+  padding-left: 20px;
+  display: inline;
+`;
+
+// const Content = ({ children, extraContent }) => {
+//   return (
+//     <Row>
+//       <div style={{ flex: 1 }}>{children}</div>
+//       <div className="image">{extraContent}</div>
+//     </Row>
+//   );
+// };
+
+const ProjectCard = ({ title, helpTags, description, typeTags, locations }) => (
   <Card>
     <PageHeader
       title={title}
       className="site-page-header"
       subTitle="Looking for:"
-      tags={
-        <div>
-          {helpTags.map(helpTag => (
-            <Tag color="blue">{helpTag}</Tag>
-          ))}
-        </div>
-      }
-      // extra={[
-      //   <Button key="3">Operation</Button>,
-      //   <Button key="2">Operation</Button>,
-      //   <Button key="1" type="primary">
-      //     Primary
-      //   </Button>,
-      // ]}
-      breadcrumb={{ routes }}
+      tags={<ProjectHelpTags helpTags={helpTags} />}
     >
-      <Content
-        extraContent={
-          <img
-            src="https://gw.alipayobjects.com/zos/antfincdn/K%24NnlsB%26hz/pageHeader.svg"
-            alt="content"
-            width="100%"
-          />
-        }
-      >
-        <ProjectDescription description={description} />
-        <ProjectTypeTags typeTags={typeTags} />
-      </Content>
+      <ProjectDescription description={description} />
+      {/*<ProjectTypeTags typeTags={typeTags} />*/}
+      <ProjectLocationTags locations={locations} />
     </PageHeader>
   </Card>
 );

@@ -17,6 +17,7 @@ const ProjectList = () => {
               helpTags={card.helpTags}
               description={card.description}
               typeTags={card.typeTags}
+              locations={card.locations}
             />
           );
         })}
