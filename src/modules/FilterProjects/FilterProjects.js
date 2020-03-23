@@ -7,7 +7,7 @@ import Filters from "./Filters";
 import { Content } from "./FilterProjects.styled";
 
 const FilterProjects = ({ setLocationFilter, locationFilter }) => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   return (
     <Content>
