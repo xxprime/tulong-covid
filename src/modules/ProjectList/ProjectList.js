@@ -1,4 +1,5 @@
 import React from "react";
+import "./index.css";
 
 import { Content, Wrapper } from "./ProjectList.styled";
 
@@ -7,16 +8,26 @@ import cards from "./mockData";
 
 const ProjectList = ({ locationFilter }) => {
   return (
-    <Content>
-      <Wrapper>
-        {locationFilter.length !== 0
-          ? cards
-              .filter(card =>
-                card.locations.some(location =>
-                  locationFilter.includes(location)
+    <div className="content">
+      <Content>
+        <Wrapper>
+          {locationFilter.length !== 0
+            ? cards
+                .filter(card =>
+                  card.locations.some(location =>
+                    locationFilter.includes(location)
+                  )
                 )
-              )
-              .map(card => (
+                .map(card => (
+                  <ProjectCard
+                    title={card.title}
+                    helpTags={card.helpTags}
+                    description={card.description}
+                    typeTags={card.typeTags}
+                    locations={card.locations}
+                  />
+                ))
+            : cards.map(card => (
                 <ProjectCard
                   title={card.title}
                   helpTags={card.helpTags}
@@ -24,18 +35,10 @@ const ProjectList = ({ locationFilter }) => {
                   typeTags={card.typeTags}
                   locations={card.locations}
                 />
-              ))
-          : cards.map(card => (
-              <ProjectCard
-                title={card.title}
-                helpTags={card.helpTags}
-                description={card.description}
-                typeTags={card.typeTags}
-                locations={card.locations}
-              />
-            ))}
-      </Wrapper>
-    </Content>
+              ))}
+        </Wrapper>
+      </Content>
+    </div>
   );
 };
 
