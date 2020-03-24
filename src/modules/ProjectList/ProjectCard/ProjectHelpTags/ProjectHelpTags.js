@@ -4,7 +4,7 @@ import { Tag } from "antd";
 const ProjectHelpTags = ({ helpTags }) => (
   <div>
     {helpTags.map(helpTag => (
-      <Tag color="blue">{helpTag}</Tag>
+      <Tag color="var(--royal-blue)">{helpTag}</Tag>
     ))}
   </div>
 );

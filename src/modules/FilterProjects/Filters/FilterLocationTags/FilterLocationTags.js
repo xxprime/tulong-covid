@@ -18,8 +18,9 @@ const FilterLocationTags = ({
   return (
     <Wrapper>
       {locations.map(location => (
+        // TODO: Add closable tag
         <Tag
-          color="red"
+          color="var(--indian-red)"
           onClick={() => {
             handleFilter(setLocationFilter, locationFilter, location.locations);
           }}
