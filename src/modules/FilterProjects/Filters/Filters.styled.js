@@ -8,7 +8,7 @@ export const Content = styled(antContent)`
 `;
 
 export const Wrapper = styled.div`
-  background: #fff;
+  background: var(--white);
   padding: 24px;
   min-height: 100px;
 `;
