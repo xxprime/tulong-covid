@@ -9,7 +9,7 @@ const ProjectLocationTags = ({ locations }) => (
     <EnvironmentFilled />
     <LocationWrapper>
       {locations.map(location => (
-        <Tag color="red">{location}</Tag>
+        <Tag color="var(--indian-red)">{location}</Tag>
       ))}
     </LocationWrapper>
   </div>

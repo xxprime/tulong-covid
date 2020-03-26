@@ -3,10 +3,11 @@ import { Tag } from "antd";
 
 import { Wrapper } from "./ProjectTypeTags.styled";
 
+// NOTE: This component is not yet used
 const ProjectTypeTags = ({ typeTags }) => (
   <Wrapper>
     {typeTags.map(typeTag => (
-      <Tag color="red">{typeTag}</Tag>
+      <Tag color="var(--indian-red)">{typeTag}</Tag>
     ))}
   </Wrapper>
 );

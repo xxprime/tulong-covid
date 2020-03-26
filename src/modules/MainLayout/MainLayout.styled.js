@@ -4,13 +4,13 @@ import { Menu as antMenu, Layout as antLayout } from "antd";
 const { Header: antHeader, Footer: antFooter } = antLayout;
 
 export const Header = styled(antHeader)`
-  background: #fff;
+  background: var(--white);
 `;
 
 export const Logo = styled.div`
   width: 120px;
   height: 31px;
-  background: rgb(96, 96, 96);
+  background: var(--grey-96);
   margin: 16px 24px 16px 0;
   float: left;
 `;
