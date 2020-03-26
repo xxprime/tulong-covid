@@ -13,10 +13,7 @@ export const Wrapper = styled.div`
   min-height: 600px;
 `;
 export const Pagination = styled(antPagination)`
- 
-  width: 100%;
+  margin: 0 auto;
   display:inline-block;
-  align-items:center;
-  vertical-align:middle;
-  
+  padding: 25px 50px 0px 50px;
 `;

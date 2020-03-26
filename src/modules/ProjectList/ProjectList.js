@@ -19,16 +19,29 @@ const ProjectList = ({ locationFilter }) => {
      },[locationFilter]);
  
   return (
-    <div className="content">
-
-      <Content>
-        <Wrapper>
-          {locationFilter.length !== 0
-            ? filteredCards
-                .slice((paginationPage-1) * paginationSize
-                  ,paginationPage * paginationSize
-                )
-                .map(card => (
+    <div>
+      <div className="content">
+        <Content>
+          <Wrapper>
+            {locationFilter.length !== 0
+              ? filteredCards
+                  .slice((paginationPage-1) * paginationSize
+                    ,paginationPage * paginationSize
+                  )
+                  .map(card => (
+                    <ProjectCard
+                      title={card.title}
+                      helpTags={card.helpTags}
+                      description={card.description}
+                      typeTags={card.typeTags}
+                      locations={card.locations}
+                    />
+                  ))
+              : cards
+                  .slice((paginationPage-1) * paginationSize
+                    ,paginationPage * paginationSize
+                  )
+                  .map(card => (
                   <ProjectCard
                     title={card.title}
                     helpTags={card.helpTags}
@@ -36,33 +49,24 @@ const ProjectList = ({ locationFilter }) => {
                     typeTags={card.typeTags}
                     locations={card.locations}
                   />
-                ))
-            : cards
-                .slice((paginationPage-1) * paginationSize
-                  ,paginationPage * paginationSize
-                )
-                .map(card => (
-                <ProjectCard
-                  title={card.title}
-                  helpTags={card.helpTags}
-                  description={card.description}
-                  typeTags={card.typeTags}
-                  locations={card.locations}
-                />
-              ))}
-        </Wrapper>
+                ))}
+          </Wrapper>
+        
+        </Content>
+      </div>
+      <div classname='Pagination'>
         <Pagination
-        current={paginationPage} 
-        total={(locationFilter.length !== 0 )? filteredCards.length : cards.length} 
-        pageSize={paginationSize}
-        defaultCurrent={1}
-        showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
-        onChange = {(page,pageSize) =>{
-          setPaginationPage(page);
-          setPaginationSize(pageSize);
-        }}
-        /> 
-      </Content>
+          current={paginationPage} 
+          total={(locationFilter.length !== 0 )? filteredCards.length : cards.length} 
+          pageSize={paginationSize}
+          defaultCurrent={1}
+          showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
+          onChange = {(page,pageSize) =>{
+            setPaginationPage(page);
+            setPaginationSize(pageSize);
+          }}
+          /> 
+      </div>
     </div>
   );
 };
