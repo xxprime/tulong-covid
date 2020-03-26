@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import "./index.css";
 
 import { Content, Wrapper,Pagination} from "./ProjectList.styled";
@@ -7,8 +7,16 @@ import ProjectCard from "./ProjectCard";
 import cards from "./mockData";
 
 const ProjectList = ({ locationFilter }) => {
+
   const [paginationPage, setPaginationPage] = useState(1);
-  const [paginationSize, setPaginationSize] = useState(4);
+
+  const [paginationSize, setPaginationSize] = useState(8);
+
+  const filteredCards = cards.filter(card =>card.locations.some(location =>locationFilter.includes(location)));
+
+     useEffect(() =>{
+       setPaginationPage(1);
+     },[locationFilter]);
  
   return (
     <div className="content">
@@ -16,12 +24,8 @@ const ProjectList = ({ locationFilter }) => {
       <Content>
         <Wrapper>
           {locationFilter.length !== 0
-            ? cards
-                .filter(card =>
-                  card.locations.some(location =>
-                    locationFilter.includes(location)
-                  )
-                ).slice((paginationPage-1) * paginationSize
+            ? filteredCards
+                .slice((paginationPage-1) * paginationSize
                   ,paginationPage * paginationSize
                 )
                 .map(card => (
@@ -47,8 +51,9 @@ const ProjectList = ({ locationFilter }) => {
                 />
               ))}
         </Wrapper>
-        <Pagination 
-        total={cards.length} 
+        <Pagination
+        current={paginationPage} 
+        total={(locationFilter.length !== 0 )? filteredCards.length : cards.length} 
         pageSize={paginationSize}
         defaultCurrent={1}
         showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
@@ -57,10 +62,6 @@ const ProjectList = ({ locationFilter }) => {
           setPaginationSize(pageSize);
         }}
         /> 
-              
-
-
-       
       </Content>
     </div>
   );
